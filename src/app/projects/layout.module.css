@@ -1,0 +1,23 @@
+.nav {
+  padding: 16px;
+  margin-top: 8px;
+  border: 1px solid #fbbf24;
+}
+
+.nav a {
+  padding: 0 8px;
+}
+
+.product {
+  padding: 16px;
+}
+
+.deNav {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.deNav a {
+  margin-bottom: 5px;
+}
