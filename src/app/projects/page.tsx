@@ -32,7 +32,8 @@ export default async function Projects() {
           </div>
         {projects.map((project, index) => (
           <>
-            <Link href={`/projects/${project.id}`}>{project.name}</Link>
+            {/* <Link href={`/projects/${project.id}`}>{project.name}</Link> */}
+            <Link href={`/projects${project.href}`}>{project.name}</Link>
           </>
         ))}
       </nav>

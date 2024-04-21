@@ -46,6 +46,6 @@ export async function generateStaticParams() {
   
   const projects = await getProjects()
   return projects.map((project) => ({
-    slug:project.name.toLowerCase().replace(/\s+/g, '-'),
+    slug:project.href,
   }))
 }
