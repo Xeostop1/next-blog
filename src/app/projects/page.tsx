@@ -3,6 +3,8 @@ import Link from 'next/link'
 import styles from './layout.module.css'
 import { getProjects } from '@/service/projects'
 import AboutCats from '@/components/aboutCats'
+import CustomImage from '@/components/customImage';
+
 
 //test로 페이지 내에서 만들었다. 현재 service/projects.ts에서 불러서 사용 중.
 //const projects = ['envSettings', 'UI', 'TypeScript', 'Next.js']
@@ -18,6 +20,16 @@ export default async function Projects() {
     <>
       <h1>Project 공통 소개</h1>
       <nav className={styles.deNav}>  
+      <div style={{width: "30%"}}> {/* 컨테이너의 너비를 50%로 설정 */}
+        <CustomImage
+          imageData={{
+            src: "/project_intro.png",
+            alt: "index_landing",
+            width: 150 ,
+            height: 150,
+          }}
+          />
+          </div>
         {projects.map((project, index) => (
           <>
             <Link href={`/projects/${project.id}`}>{project.name}</Link>

@@ -27,7 +27,15 @@ export default async function ProjectDescript({ params: { slug } }: Props) {
   }
 
   //서버 파일에 있는 데이터 중 해당 제품의 정보를 찾아서 화면에 뿌려준다
-  return <div>{project.name} Page with Descript</div>
+  return (
+    <div>
+      <h1>{project.name} Page with Descript</h1>
+      <p>{project.descript}</p>
+      <img src={project.img} alt={project.name} />
+    </div>
+
+
+  )
 }
 
 //page 미리 생성 generateStaticParams 사용(next ssg) 슬러그: 프로젝트.id("id": "1234")
@@ -38,6 +46,6 @@ export async function generateStaticParams() {
   
   const projects = await getProjects()
   return projects.map((project) => ({
-    slug: project.id,
+    slug:project.name.toLowerCase().replace(/\s+/g, '-'),
   }))
 }

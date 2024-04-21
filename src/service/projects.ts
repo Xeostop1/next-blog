@@ -3,11 +3,13 @@ import { promises as fs } from 'fs'
 //두개 모두 next path  파일경로 처리 알아서 해줌 넘 좋아!
 // fs는 콜백없이 비동기 작업가능 async await 사용가능 
 
-
+//타입 추가 
 export type Project = {
   id: string
   name: string
   descript: string
+  img: string
+  href: string
 }
 
 //ts는 렌더링 될 필요없는것 
@@ -18,7 +20,7 @@ export async function getProjects(): Promise<Project[]> {
 
   //재사용 때문에 쓴것 
   const filePath = path.join(process.cwd(), 'data', 'projects.json')
-  //JSON 경로 구선 cwd 현재 디렉토리 위치 알려줌. 그래서 json하고 전체 경로 형성
+
 
   console.log(filePath)
   //읽어오는걸 비동기로 걸어준것!(나는 이걸 가져와서 먼저 써야 하니까)

@@ -1,4 +1,5 @@
 //어바웃+페이지 함수명
+
 export default function AboutPage(){
   return <div>About page 안에 들어 가나요?</div>
 }
