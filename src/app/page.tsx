@@ -5,7 +5,7 @@ import os from 'os' //노드 API
 //여기는 서버니까
 
 export default function Home() {
-  console.log('Server Components?🥰')
+  console.log('Server Components*****')
   console.log(os.hostname()) //노드 API Test
 
   return (

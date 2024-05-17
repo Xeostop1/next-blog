@@ -27,3 +27,6 @@ export default function AboutCats() {
   //아틀에 api리스폰스 값 사용 
   return <article className={styles.article}>About Cats: {text}</article>
 }
+
+
+//슬러그가 프롭스를 받아서 어떤 상태를 만드는지 확인! 
