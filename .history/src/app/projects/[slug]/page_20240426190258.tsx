@@ -21,6 +21,7 @@ export function generateMetadata({ params }: Props) {
 //url뒤에 안에있는것을 살펴보기 위해 
 export default async function ProjectDescript({ params: { slug } }: Props) {
   const project = await getProject(slug)
+
   if (!project) {
     notFound()
   }
