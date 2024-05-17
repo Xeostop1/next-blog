@@ -16,6 +16,7 @@ export default async function Projects() {
 //리액트 styles.deNav 클래스로 스타일 구성
   const projects = await getProjects()
 
+  //왜??????
   return (
     <>
       <h1>Project 공통 소개</h1>
@@ -33,11 +34,11 @@ export default async function Projects() {
         {projects.map((project, index) => (
           <>
             {/* <Link href={`/projects/${project.id}`}>{project.name}</Link> */}
-            <Link href={`/projects${project.href}`}>{project.name}</Link>
+            <Link href={`/projects/${project.id}`}>{project.name}</Link>
           </>
         ))}
       </nav>
-      <AboutCats /> {/* CSR */}
+      {/* <AboutCats /> CSR */}
     </>
   )
 }
