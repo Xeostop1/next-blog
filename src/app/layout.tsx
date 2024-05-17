@@ -1,4 +1,3 @@
-//헤더랑 나브 레이아웃 
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
@@ -15,7 +14,6 @@ export const metadata: Metadata = {
   },
 }
 
-//쉐어 개념이 중요함 
 export default function RootLayout({
   children,
 }: Readonly<{

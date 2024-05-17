@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { FC } from 'react'
 
-// 이미지 속성을 위한 인터페이스 정의
 interface ImageProps {
   imageData: {
     src: string;
@@ -11,7 +10,6 @@ interface ImageProps {
   };
 }
 
-// CustomImage 컴포넌트 정의
 const customImage: FC<ImageProps> = ({ imageData }) => {
   const { src, alt, width, height } = imageData;
   return (
