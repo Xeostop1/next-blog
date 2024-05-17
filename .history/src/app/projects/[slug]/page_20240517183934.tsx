@@ -2,7 +2,6 @@ import { getProject, getProjects } from '@/service/projects'
 import { notFound } from 'next/navigation'
 import CustomImage from '@/components/customImage';
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
 
 type Props = {
   params: {
@@ -60,13 +59,13 @@ async function fetchTeam(id: string) {
 export async function Profile({ params }: { params: { id: string } }) {
   const router = useRouter();
 
-  useEffect(() => {
+  useEffect(() =&gt; {
     if (!params.id) {
       router.push('/'); // 홈으로 리다이렉트
       return;
     }
 
-    const fetchData = async () => {
+    const fetchData = async () =&gt; {
       const team = await fetchTeam(params.id);
       if (!team) {
         router.push('/'); // 홈으로 리다이렉트
