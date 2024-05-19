@@ -5,6 +5,7 @@ import { history } from '../../../../data/history';
 // 모든 가능한 연도와 슬러그 조합을 생성(지금 한게 =>Catch-all Segments) 캐치 올 세그먼트
 //배열로 	/shop/a/b/c	{ slug: ['a', 'b', 'c']  계속 url이 붙는 형식 
 //Optional Catch-all Segments 그런데 이거랑 어떻게 확실한 차이가 있는지는 모르겠다. 만들어 봐야 알듯 
+// Shallow Routing 이건 또 뭘까
 
 export async function generateStaticParams() {
   const params: { params: string[] }[] = [];
