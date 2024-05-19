@@ -1,13 +1,16 @@
 // data/history.ts
 
-export const history: {
+
+export type HistoryData = {
   year: number;
   events: {
     slug: string;
     title: string;
     content: string;
   }[];
-}[] = [
+};
+
+export const history: HistoryData[] = [
   {
     year: 2021,
     events: [
