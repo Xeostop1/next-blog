@@ -26,6 +26,19 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+/* h2, h3추가 기본적으로 초기화 되나?? */
+h2 {
+  color: rgb(var(--foreground-rgb));
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  color: rgb(var(--foreground-rgb));
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
