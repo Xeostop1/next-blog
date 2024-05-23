@@ -34,7 +34,7 @@ export default async function Projects() {
         {projects.map((project, index) => (
           <>
             {/* <Link href={`/projects/${project.id}`}>{project.name}</Link> */}
-            <Link href={`/projects/images/${project.id}`}>{project.name}</Link>
+            <Link href={`/projects/${project.id}`}>{project.name}</Link>
           </>
         ))}
       </nav>

@@ -3,18 +3,18 @@
     "id": "1234",
     "name": "Project1",
     "descript": "Welcome to the exciting world of \"Spraying the Refrigerator,\" where culinary creativity knows no bounds! This innovative project invites you to embark on a culinary adventure by concocting delicious dishes using whatever ingredients happen to be hiding in your refrigerator. Gone are the days of meticulously planning meals or following strict recipes—instead, embrace spontaneity and experimentation as you explore the endless flavor combinations waiting to be discovered. Whether it's a handful of fresh produce, leftover proteins, or miscellaneous condiments, each item in your fridge becomes a potential ingredient for your next culinary masterpiece. From savory stir-fries to hearty salads and everything in between, the possibilities are as vast as your imagination. Unlock your inner chef and let serendipity guide your culinary journey with \"Spraying the Refrigerator.\" Who knows? You might just stumble upon your new favorite dish!",
-    "img": "Mc.png"
+    "img": "/images/Mc.png"
   },
   {
     "id": "1235",
     "name": "Project2",
     "descript": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptatem totam veritatis aspernatur obcaecati dolores enim, ea excepturi rerum ab molestiae placeat explicabo at doloribus, eaque libero quae magni esse!",
-    "img": "meta_img.jpg"
+    "img": "/images/meta_img.jpg"
   },
   {
     "id": "1236",
     "name": "Project3",
     "descript": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptatem totam veritatis aspernatur obcaecati dolores enim, ea excepturi rerum ab molestiae placeat explicabo at doloribus, eaque libero quae magni esse!",
-    "img": "pro_img1.jpg"
+    "img": "/images/pro_img1.jpg"
   }
 ]
