@@ -6,15 +6,15 @@
     "path": "google-address"
   },
   {
-    "title": "global SMS Sevice",
+    "title": "",
     "date": "2024-02-01",
     "descript": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptatem totam veritatis aspernatur obcaecati dolores enim, ea excepturi rerum ab molestiae placeat explicabo at doloribus, eaque libero quae magni esse!",
-    "path": "global-sms"
+    "path": "meta_img.jpg"
   },
   {
-    "title": "ReactNext Basic",
+    "title": "Project3",
     "date": "2024-03-01",
     "descript": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptatem totam veritatis aspernatur obcaecati dolores enim, ea excepturi rerum ab molestiae placeat explicabo at doloribus, eaque libero quae magni esse!",
-    "path": "react-next-basic"
+    "path": "pro_img1.jpg"
   }
 ]
