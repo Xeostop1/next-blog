@@ -22,7 +22,6 @@ export default async function ProjectDescript({ params: { slug } }: Props) {
     notFound()
   }
 
-  //서버 파일에 있는 데이터 중 해당 제품의 정보를 찾아서 화면에 뿌려준다
   return (
     <div>
       {project.name} 
@@ -40,10 +39,7 @@ export default async function ProjectDescript({ params: { slug } }: Props) {
  )
 }
 
-//page 미리 생성 generateStaticParams 사용
-// Next.js에서 제공하는 Server Component는 비동기 가능, async await만 해주면 비동기 사용가능.
 export async function generateStaticParams() {
-  //모든 제품의 페이지들을 미리 만들어 둘 수 있게 할 것.(SSG)
   const projects = await getProjects()
   return projects.map((project) => ({
     slug: project.id,

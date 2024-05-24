@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from 'react'
-//클라이언트 단 사용 방법
 export default function Counter() {
   const [count, setCount] = useState(0)
   return (
