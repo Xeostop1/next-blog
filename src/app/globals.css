@@ -17,26 +17,15 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply text-black bg-gradient-to-b from-transparent to-gray-100 bg-gray-50 dark:text-white dark:from-black dark:to-black;
 }
 
-/* h2, h3추가 기본적으로 초기화 되나?? */
 h2 {
-  color: rgb(var(--foreground-rgb));
-  font-size: 2em;
-  margin-bottom: 0.5em;
+  @apply text-2xl mb-2;
 }
 
 h3 {
-  color: rgb(var(--foreground-rgb));
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
+  @apply text-xl mb-2;
 }
 
 @layer utilities {
