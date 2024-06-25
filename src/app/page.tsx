@@ -1,27 +1,19 @@
 import Link from 'next/link';
+import { getProjects } from '../service/projects';
+import customImage from '../components/CustomImage';
 import styles from './layout.module.css';
-import { getProjects } from '@/service/projects';
-import CustomImage from '@/components/customImage';
+import { Project } from '../types';
 
-// 서버 사이드에서 프로젝트 데이터를 가져옵니다.
-export async function getStaticProps() {
-  const projects = await getProjects();
-  return {
-    props: {
-      projects,
-    },
-  };
-}
-
-export default function Home({ projects }) {
-  console.log('Server Components*****');
+export default async function Home() {
+  // 서버 측에서 프로젝트 데이터를 가져옴
+  const projects: Project[] = await getProjects();
 
   return (
     <div className={styles.container}>
       <h1>Project 공통 소개</h1>
       <nav className={styles.nav}>
         <div className={styles.projectImage}>
-          <CustomImage
+          <customImage
             imageData={{
               src: "/project_intro.png",
               alt: "index_landing",
@@ -31,13 +23,12 @@ export default function Home({ projects }) {
           />
         </div>
         {projects.map((project) => (
-          <Link key={project.id} href={`/projects/${project.id}`}>
+          <Link key={project.id} href={`/projects/${project.id}`} className={styles.link}>
             {project.name}
           </Link>
         ))}
       </nav>
       <h1>Hello</h1>
-      {/* <Counter /> */}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { getProject, getProjects } from '@/service/projects'
 import { notFound } from 'next/navigation'
-import CustomImage from '@/components/customImage';
+import CustomImage from '@/components/CustomImage';
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 

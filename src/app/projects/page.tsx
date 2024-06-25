@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styles from './layout.module.css'
 import { getProjects } from '@/service/projects'
 import AboutCats from '@/components/aboutCats'
-import CustomImage from '@/components/customImage';
+import CustomImage from '@/components/CustomImage';
 
 
 export default async function Projects() {
@@ -23,14 +23,7 @@ export default async function Projects() {
           />
           </div>
         {projects.map((project, index) => (
-          <>
-<<<<<<< HEAD
-            {/* <Link href={`/projects/${project.id}`}>{project.name}</Link> */}
-            <Link href={`/projects/images/${project.id}`}>{project.name}</Link>
-=======
             <Link href={`/projects/${project.id}`}>{project.name}</Link>
->>>>>>> d4829b31ad79005fc8ddd3231696e6e19b80f2c8
-          </>
         ))}
       </nav>
       {/* <AboutCats /> CSR */}
