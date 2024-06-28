@@ -1,8 +1,6 @@
 export interface Project {
-    id: string;
-    name: string;
-    descript: string;
-    img: string;
-    href: string;
-  }
-  
+  title: string;
+  date: string;
+  descript: string;
+  path: string;
+}

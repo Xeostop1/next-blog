@@ -1,80 +1,36 @@
-import { getProject, getProjects } from '@/service/projects'
-import { notFound } from 'next/navigation'
+import { getProject } from '@/service/projects';
 import CustomImage from '@/components/CustomImage';
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import { notFound } from 'next/navigation';
+import { Project } from '@/types';
 
 type Props = {
   params: {
-    slug: string
-  }
-}
+    slug: string;
+  };
+};
 
-export function generateMetadata({ params }: Props) {
-  return {
-    title: `project 이름: ${params.slug}`,
-  }
-}
+export default async function ProjectPage({ params }: Props) {
+  const project = await getProject(params.slug);
 
-export default async function ProjectDescript({ params: { slug } }: Props) {
-  const project = await getProject(slug)
   if (!project) {
-    notFound()
+    notFound();
+    return null;
   }
 
   return (
-    <div>
-      {project.name} 
-      <CustomImage
+    <div className="container">
+      <h1>{project.title}</h1>
+      <div className="projectImage">
+        <CustomImage
           imageData={{
-            src: `${project.img}`,
-            alt: `${project.name}`,
-            width: 300,
-            height: 200,
+            src: `/images/${project.path}.png`,
+            alt: project.title,
+            width: 600,
+            height: 400,
           }}
         />
-      {project.descript} 
+      </div>
+      <p>{project.descript}</p>
     </div>
-    
- )
-}
-
-export async function generateStaticParams() {
-  const projects = await getProjects()
-  return projects.map((project) => ({
-    slug: project.id,
-  }))
-}
-
-//리다이렉트 파라미터 2개 path, type(replace/ push)
-async function fetchTeam(id: string) {
-  const res = await fetch(`http://localhost:3000/projects/${id}`)
-  if (!res.ok) return undefined
-  return res.json()
-}
-
-export async function Profile({ params }: { params: { id: string } }) {
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!params.id) {
-      router.push('/'); // 홈으로 리다이렉트
-      return;
-    }
-
-    const fetchData = async () => {
-      const team = await fetchTeam(params.id);
-      if (!team) {
-        router.push('/'); // 홈으로 리다이렉트
-      }
-    };
-
-    fetchData();
-  }, [params.id, router]);
-
-  return (
-    <div>
-      {}
-    </div>
-  )
+  );
 }

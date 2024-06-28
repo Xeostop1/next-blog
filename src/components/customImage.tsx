@@ -10,7 +10,7 @@ interface ImageProps {
   };
 }
 
-const customImage: FC<ImageProps> = ({ imageData }) => {
+const CustomImage: FC<ImageProps> = ({ imageData }) => {
   const { src, alt, width, height } = imageData;
   return (
     <Image
@@ -24,4 +24,4 @@ const customImage: FC<ImageProps> = ({ imageData }) => {
   )
 }
 
-export default customImage;
+export default CustomImage;

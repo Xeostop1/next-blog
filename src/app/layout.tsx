@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <header className={styles.header}>
           <h1>
-            <Link href="/">Next.js Blog</Link>
+            <Link href="/">Home</Link>
           </h1>
           <nav className={styles.nav}>
             <Link href="/contact">Contact</Link>
