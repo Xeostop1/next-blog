@@ -9,7 +9,7 @@ export default async function Home() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Project 공통 소개</h1>
+     {/*  <h1 className={styles.title}>Project 공통 소개</h1> */}
       <nav className={styles.nav}>
         {projects.map((project) => (
           <Link key={project.path} href={`/projects/${project.path}`} className={styles.link}>

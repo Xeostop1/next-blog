@@ -1,39 +1,37 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import Link from 'next/link'
-import './globals.css'
-import styles from './layout.module.css'
+import { ReactNode } from 'react';
+import Link from 'next/link';
+import styles from './layout.module.css';
 
-const inter = Inter({ subsets: ['latin'] })
+type Props = {
+  children: ReactNode;
+};
 
-export const metadata: Metadata = {
-  title: 'Next.js Blog',
-  description: 'Next.js 활용한 개인 Blog입니다.',
-  icons: {
-    icon: '/favicon.ico',
-  },
-}
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <head>
+        <title>My Blog</title>
+      </head>
+      <body className={styles.container}>
         <header className={styles.header}>
-          <h1>
-            <Link href="/">Home</Link>
-          </h1>
+         <h2>hello World</h2>
           <nav className={styles.nav}>
-            <Link href="/contact">Contact</Link>
-            <Link href="/about">About</Link>
-            <Link href="/projects">Projects</Link>
+            <Link href="/" className={styles.link}>Home</Link>
+            <Link href="/about" className={styles.link}>About</Link>
+            <Link href="/projects" className={styles.link}>Projects</Link>
+            <Link href="/contact" className={styles.link}>Contact</Link>
           </nav>
         </header>
-        {children}
+        <main className={styles.main}>
+          {children}
+        </main>
+        <footer className={styles.footer}>
+          <h1> <Link href="/contact">Contact</Link></h1>
+          <nav className={styles.nav}>
+      
+          </nav>
+        </footer>
       </body>
     </html>
-  )
+  );
 }
