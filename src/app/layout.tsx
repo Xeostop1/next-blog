@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
+import '../globals.css';
 
 type Props = {
   children: ReactNode;
@@ -21,7 +22,9 @@ export default function RootLayout({ children }: Props) {
             <Link href="/contact" className="text-white no-underline bg-gray-700 p-2 rounded transition-colors hover:bg-gray-800">Contact</Link>
           </nav>
         </header>
-        <main className="flex-1 w-full flex flex-col items-center">{children}</main>
+        <main className="flex-1 w-full flex flex-col items-center pt-20">
+          {children}
+        </main>
         <footer className="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center bg-white bg-opacity-10 p-4 backdrop-blur-lg shadow-md border border-opacity-20">
           <h1 className="text-xl m-0">Footer</h1>
           <nav className="flex gap-4">

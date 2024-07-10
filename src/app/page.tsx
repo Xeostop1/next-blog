@@ -12,7 +12,7 @@ export default async function Home() {
       <nav className="flex flex-col items-center gap-8">
         {projects.map((project) => (
           <Link key={project.path} href={`/projects/${project.path}`} className="text-white no-underline">
-            <div className="bg-white text-black rounded-lg p-6 text-center w-4/5 max-w-xl shadow-md mb-8">
+            <div className="bg-white bg-opacity-10 text-black rounded-lg p-6 text-center w-4/5 max-w-xl shadow-md backdrop-blur-lg border border-opacity-20">
               <Image
                 src={`/images/${project.path}.png`}
                 alt={project.title}
