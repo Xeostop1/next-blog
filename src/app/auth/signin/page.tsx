@@ -1,4 +1,7 @@
 // src/app/auth/signin/page.tsx
+//이걸 사용하면 무조건 명시해줘야 하나봐
+'use client'; // 클라이언트 컴포넌트로 설정
+
 import { useState } from 'react'; // useState 훅을 가져옴
 import { signInWithEmailAndPassword } from 'firebase/auth'; // 이메일과 비밀번호로 로그인하는 함수 가져옴
 import { auth } from '../../../lib/firebase'; // Firebase 인증 객체 가져옴
@@ -23,7 +26,7 @@ const SignIn = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
-      <h1 className="text-4xl mb-8">Admin Login</h1>
+      <h1 className="text-4xl mb-8">Welcome to the secret garden.</h1>
       <form onSubmit={handleSubmit} className="w-full max-w-md">
         <div className="mb-4">
           <label className="block text-gray-300 text-sm font-bold mb-2" htmlFor="email">

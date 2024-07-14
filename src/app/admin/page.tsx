@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'; 
 import { auth } from '../../lib/firebase'; 
@@ -42,6 +44,7 @@ const Admin = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
       <h1 className="text-4xl mb-8">Admin Page</h1>
+      <h2 className="text-4xl mb-8">디비를 연결해야 해요.<br />그래서 아직 뭐 해야 할지 모르겠어요</h2>
       {user ? (
         // 사용자가 로그인된 경우
         <>
