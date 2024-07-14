@@ -8,11 +8,11 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col items-center pt-20 bg-black text-white min-h-screen">
-      <h1 className="text-4xl mb-8">Project 공통 소개</h1>
-      <nav className="flex flex-col items-center gap-8">
+      <h1 className="text-4xl mb-8">Project</h1>
+      <nav className="flex flex-col items-center gap-8 w-full px-4">
         {projects.map((project) => (
-          <Link key={project.path} href={`/projects/${project.path}`} className="text-white no-underline">
-            <div className="bg-white bg-opacity-10 text-black rounded-lg p-6 text-center w-4/5 max-w-xl shadow-md backdrop-blur-lg border border-opacity-20">
+          <Link key={project.path} href={`/projects/${project.path}`} className="text-white no-underline w-full max-w-xl">
+            <div className="bg-white bg-opacity-98 text-black rounded-lg p-6 text-center shadow-md backdrop-blur-lg hover:bg-opacity-20 hover:text-white transition duration-300 ease-in-out">
               <Image
                 src={`/images/${project.path}.png`}
                 alt={project.title}
@@ -21,8 +21,8 @@ export default async function Home() {
                 className="rounded-lg w-full h-auto"
               />
               <h2 className="mt-4 text-xl">{project.title}</h2>
-              <p><strong>Date:</strong> {project.date}</p>
-              <p>{project.descript}</p>
+              <p className="mt-2"><strong>Date:</strong> {project.date}</p>
+              <p className="mt-2">{project.descript}</p>
             </div>
           </Link>
         ))}

@@ -12,7 +12,8 @@ export default function RootLayout({ children }: Props) {
       <head>
         <title>My Blog</title>
       </head>
-      <body className="flex flex-col items-center pt-16 pb-16 bg-black text-white min-h-screen">
+      {/* padding-top */}
+      <body className="flex flex-col items-center pt-14 pb-16 bg-black text-white min-h-screen">
         <header className="fixed top-0 left-0 w-full z-50 flex justify-between items-center bg-white bg-opacity-10 p-4 backdrop-blur-lg shadow-md rounded-bl-2xl rounded-br-2xl">
           <h1 className="text-xl m-0">My Blog</h1>
           <nav className="flex gap-4">
@@ -27,7 +28,7 @@ export default function RootLayout({ children }: Props) {
             {children}
           </div>
         </main>
-        <footer className="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center bg-white bg-opacity-10 p-4 backdrop-blur-lg shadow-md rounded-tl-2xl rounded-tr-2xl">
+        <footer className="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center bg-white bg-opacity-10 p-4 backdrop-blur-lg shadow-md rounded-tl-3xl rounded-tr-3xl">
           <h1 className="text-xl m-0"></h1>
           <nav className="flex gap-4">
             <h1 className="text-xl m-0">
