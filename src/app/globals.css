@@ -3,21 +3,23 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255; /* 기본 텍스트 색상: 흰색 */
+  --background-start-rgb: 0, 0, 0; /* 기본 배경색: 검정 */
+  --background-end-rgb: 0, 0, 0;   /* 기본 배경색: 검정 */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 255, 255, 255; /* 어두운 테마 텍스트 색상: 흰색 */
+    --background-start-rgb: 0, 0, 0; /* 어두운 테마 배경색: 검정 */
+    --background-end-rgb: 0, 0, 0;   /* 어두운 테마 배경색: 검정 */
   }
 }
 
 body {
-  @apply  text-white;
+  color: rgb(var(--foreground-rgb)); /* 텍스트 색상 적용 */
+  background: rgb(var(--background-start-rgb)); /* 배경색 적용 */
+  @apply text-white;
 }
 
 h2 {
