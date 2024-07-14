@@ -17,7 +17,7 @@
 }
 
 body {
-  @apply text-black bg-gradient-to-b from-transparent to-gray-100 bg-gray-50 dark:text-white dark:from-black dark:to-black;
+  @apply  text-white;
 }
 
 h2 {

@@ -25,3 +25,6 @@ export default function AboutPage(){
     </div>
   )
 }
+
+
+// 로그인 기능 firebase 추가
