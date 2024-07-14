@@ -1,10 +1,23 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import '../app/globals.css';
+import { Gi3dStairs } from "react-icons/gi";
+import dynamic from 'next/dynamic';
+//ssr: false: 서버 사이드 렌더링 비활성화
+// LoginButton 컴포넌트는 클라이언트 측에서만 로드
+// 초기 서버 렌더링에 포함되지 않음
+//https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading
+// LoginButton: 주로 클라이언트 측 기능 
+// SSR 비활성화 이점: 클라이언트에서만 필요한 컴포넌트, 서버 리소스 절약
+
+const LoginButton = dynamic(() => import('../components/Login'), { ssr: false });
 
 type Props = {
   children: ReactNode;
 };
+//동적로딩
+
+
 
 export default function RootLayout({ children }: Props) {
   return (
@@ -29,7 +42,7 @@ export default function RootLayout({ children }: Props) {
           </div>
         </main>
         <footer className="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center bg-white bg-opacity-10 p-4 backdrop-blur-lg shadow-md rounded-tl-3xl rounded-tr-3xl">
-          <h1 className="text-xl m-0"></h1>
+        <LoginButton /> {/* LoginButton 컴포넌트 사용 */}
           <nav className="flex gap-4">
             <h1 className="text-xl m-0">
               <Link href="/contact" className="text-white no-underline p-2 rounded transition-colors">Contact</Link>
@@ -40,3 +53,9 @@ export default function RootLayout({ children }: Props) {
     </html>
   );
 }
+
+
+//동적 컴포넌트 로딩:
+// dynamic 함수로 LoginButton 컴포넌트 동적 로드
+// 초기 페이지 로드 때 포함되지 않음
+// 필요 시 클라이언트에서 로드 // 장점: 초기 로드 시간 번들 크기 감소
