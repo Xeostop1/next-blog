@@ -7,7 +7,7 @@ export default async function Home() {
   const projects: Project[] = await getProjects();
 
   return (
-    <div className="flex flex-col items-center pt-20 bg-black text-white min-h-screen">
+    <div className="flex flex-col items-center  bg-black text-white min-h-screen">
       <h1 className="text-4xl mb-8">Project</h1>
       <nav className="flex flex-col items-center gap-8 w-full px-4">
         {projects.map((project) => (

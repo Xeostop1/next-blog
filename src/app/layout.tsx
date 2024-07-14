@@ -1,6 +1,4 @@
 
-'use client';     //이걸 사용하면 무조건 명시해줘야 하나봐
-
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';

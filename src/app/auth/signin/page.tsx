@@ -25,7 +25,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
+    <div className="flex flex-col items-center bg-black text-white min-h-screen">
       <h1 className="text-4xl mb-8">Welcome to the secret garden.</h1>
       <form onSubmit={handleSubmit} className="w-full max-w-md">
         <div className="mb-4">
