@@ -33,7 +33,7 @@ export default function AboutPage(){
 //다중 항목을 한 번에 표시할 수 있는 캐러셀(슬라이더) 컴포넌트, 반응형 디자인을 지원 다양한 화면 크기에서 사용
 //yarn add react-multi-carousel
 
-//Markdown을 React 컴포넌트로 렌더링 ,Markdown을 쉽게 HTML로 변환
+//Markdown을 React 컴포넌트로 렌더링, Markdown을 쉽게 HTML로 변환
 //yarn add react-markdown
 
 // 코드 블록을 구문 강조(syntax highlighting)하여 렌더링

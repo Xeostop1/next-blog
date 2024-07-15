@@ -32,7 +32,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-black text-white min-h-screen">
+    <div className="flex flex-col items-center  bg-black text-white min-h-screen">
       <h1 className="text-4xl mb-8">Contact Us</h1> {/* 폼 제목 */}
       <form onSubmit={handleSubmit} className="w-full max-w-md">
         <div className="mb-4">

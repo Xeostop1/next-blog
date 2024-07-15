@@ -6,13 +6,12 @@ import '../app/globals.css';
 //ssr: false: 서버 사이드 렌더링 비활성화
 // LoginButton 컴포넌트는 클라이언트 측에서만 로드
 // 초기 서버 렌더링에 포함되지 않음
-//https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading
+// https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading
 // LoginButton: 주로 클라이언트 측 기능 
 // SSR 비활성화 이점: 클라이언트에서만 필요한 컴포넌트, 서버 리소스 절약
 
 
-
-const LoginButton = dynamic(() => import('../components/Login'), { ssr: false });
+const LoginButton = dynamic(() => import('../components/login'), { ssr: false });
 
 type Props = {
   children: ReactNode;

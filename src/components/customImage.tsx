@@ -1,5 +1,4 @@
-import Image from 'next/image'
-import { FC } from 'react'
+import Image from 'next/image';
 
 interface ImageProps {
   imageData: {
@@ -10,18 +9,18 @@ interface ImageProps {
   };
 }
 
-const CustomImage: FC<ImageProps> = ({ imageData }) => {
+const CustomImage = ({ imageData }: ImageProps) => {
   const { src, alt, width, height } = imageData;
   return (
     <Image
       src={src}
       alt={alt}
-      layout="responsive"
       width={width}
       height={height}
       sizes="100vw"
+      style={{ width: '100%', height: 'auto' }} 
     />
-  )
-}
+  );
+};
 
 export default CustomImage;
