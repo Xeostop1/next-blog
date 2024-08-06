@@ -1,6 +1,4 @@
 
-'use client';     //이걸 사용하면 무조건 명시해줘야 하나봐
-
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
@@ -8,13 +6,13 @@ import '../app/globals.css';
 //ssr: false: 서버 사이드 렌더링 비활성화
 // LoginButton 컴포넌트는 클라이언트 측에서만 로드
 // 초기 서버 렌더링에 포함되지 않음
-//https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading
+// https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading
 // LoginButton: 주로 클라이언트 측 기능 
 // SSR 비활성화 이점: 클라이언트에서만 필요한 컴포넌트, 서버 리소스 절약
+// 랜더링 옵티마이징! 좀더 
 
 
-
-const LoginButton = dynamic(() => import('../components/Login'), { ssr: false });
+const LoginButton = dynamic(() => import('../components/login'), { ssr: false });
 
 type Props = {
   children: ReactNode;
