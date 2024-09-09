@@ -68,3 +68,8 @@ export default function AboutPage({ params }: Params) {
     );
   }
 }
+
+
+//모든 로직은 서비스->에서 정의해서 각 페이지 에서는 불러서 쓸 수 있게 
+// history.find((yearData)  이렇것 들도 모두 다시 수정해야 한다! ->데이터 처리는 따로 있어야 한다 
+// 데이터 처리는 서비스에서만 여기서는 페이지를 보여주는 것만을 목표로 한다! 

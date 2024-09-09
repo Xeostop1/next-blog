@@ -1,27 +1,29 @@
 import Image from 'next/image'
-import { FC } from 'react'
 
-interface ImageProps {
-  imageData: {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-  };
-}
+type ImageData = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
 
-const CustomImage: FC<ImageProps> = ({ imageData }) => {
+type CustomImageProps = {
+  imageData: ImageData;
+};
+
+const customImage = ({ imageData }: CustomImageProps) => {
   const { src, alt, width, height } = imageData;
   return (
-    <Image
-      src={src}
-      alt={alt}
-      layout="responsive"
-      width={width}
-      height={height}
-      sizes="100vw"
-    />
+    <div style={{ position: 'relative', width: '100%', height: '0', paddingBottom: `${(height / width) * 100}%` }}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        style={{ objectFit: 'cover' }}
+        sizes="100vw"
+      />
+    </div>
   )
 }
 
-export default CustomImage;
+export default customImage;

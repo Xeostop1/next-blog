@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { getProjects } from '../service/projects';
-import { Project } from '../types';
+import { Project } from '../types/project';
 import dynamic from 'next/dynamic';
 
 // MyCarousel 컴포넌트를 동적 로드하여 클라이언트 측에서만 렌더링
 const MyCarousel = dynamic(() => import('../components/myCarousel'), { ssr: false });
+// 반응형에 대한 부분 질문 필수 
 
 export default async function Home() {
   const projects: Project[] = await getProjects();

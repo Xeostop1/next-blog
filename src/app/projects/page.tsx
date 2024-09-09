@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import styles from './layout.module.css'
 import { getProjects } from '@/service/projects'
-import AboutCats from '@/components/aboutCats'
 import CustomImage from '@/components/customImage';
 
 
@@ -26,7 +25,6 @@ export default async function Projects() {
             <Link href={`/projects/${project.path}`}>{project.title}</Link>
         ))}
       </nav>
-      {/* <AboutCats /> CSR */}
     </>
   )
 }

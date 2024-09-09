@@ -1,28 +1,24 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import Link from 'next/link'
-import styles from './layout.module.css'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Next.js Blog | Projects ',
   description: 'first next JS blog',
 }
 
-
 export default function ProductsLayout({
-  children,   
+  children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
     <>
-      <nav className={styles.nav}>  
-        <Link href="/projects/project1">Project1</Link>
-        <Link href="/projects/project2">Project2</Link>
+      <nav className="p-4 mt-2 border border-amber-300">
+        <Link href="/projects/project1" className="px-2 py-1 mr-2 hover:text-amber-600 transition-colors">Project1</Link>
+        <Link href="/projects/project2" className="px-2 py-1 hover:text-amber-600 transition-colors">Project2</Link>
       </nav>
-      <section className={styles.product}>{children}</section>
+      <section className="p-4">{children}</section>
     </>
   )
 }

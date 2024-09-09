@@ -1,7 +1,7 @@
 import { getProject } from '@/service/projects';
-import CustomImage from '@/components/CustomImage';
+import CustomImage from '@/components/customImage';
 import { notFound } from 'next/navigation';
-import { Project } from '@/types';
+import { Project } from '@/types/project';
 
 type Props = {
   params: {
@@ -34,3 +34,5 @@ export default async function ProjectPage({ params }: Props) {
     </div>
   );
 }
+
+
