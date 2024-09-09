@@ -22,6 +22,10 @@ body {
   @apply text-white;
 }
 
+h1 {
+  @apply text-4xl mb-8;
+}
+
 h2 {
   @apply text-2xl mb-2;
 }
@@ -33,5 +37,27 @@ h3 {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Carousel 관련 스타일 */
+  .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel-item {
+    flex: 0 0 auto;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-item.center {
+    transform: scale(1.1);
+  }
+
+  .carousel-item.prev, .carousel-item.next {
+    opacity: 0.5;
   }
 }
