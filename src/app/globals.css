@@ -3,23 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255; /* 기본 텍스트 색상: 흰색 */
-  --background-start-rgb: 0, 0, 0; /* 기본 배경색: 검정 */
-  --background-end-rgb: 0, 0, 0;   /* 기본 배경색: 검정 */
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255; /* 어두운 테마 텍스트 색상: 흰색 */
-    --background-start-rgb: 0, 0, 0; /* 어두운 테마 배경색: 검정 */
-    --background-end-rgb: 0, 0, 0;   /* 어두운 테마 배경색: 검정 */
-  }
+  --foreground-rgb: 0, 0, 0; 
+  --background-start-rgb: 245, 245, 245; 
 }
 
 body {
-  color: rgb(var(--foreground-rgb)); /* 텍스트 색상 적용 */
-  background: rgb(var(--background-start-rgb)); /* 배경색 적용 */
-  @apply text-white;
+  background: rgb(var(--background-start-rgb)); 
+  color: rgb(var(--foreground-rgb)); 
+  @apply text-black;
 }
 
 h1 {
@@ -41,26 +32,35 @@ h3 {
 
   /* Carousel 관련 스타일 */
   .carousel-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
+    @apply flex justify-center items-center relative overflow-hidden;
   }
 
   .carousel-item {
-    flex: 0 0 auto;
-    transition: transform 0.5s ease-in-out;
+    @apply flex-auto transition-transform duration-500 ease-in-out;
   }
 
   .carousel-item.center {
-    transform: scale(1.1);
+    @apply scale-110;
   }
 
   .carousel-item.prev, .carousel-item.next {
-    opacity: 0.5;
+    @apply opacity-50;
+  }
+
+  /* 상품 그리드 관련 스타일 */
+  .product-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8;
+  }
+
+  .product-item {
+    @apply bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300 ease-in-out;
+  }
+
+  .product-item h2 {
+    @apply text-xl font-bold mt-4;
+  }
+
+  .product-item p {
+    @apply text-gray-600 mt-2;
   }
 }
-
-
-/* 정말 찐으로 글로벌로만 모든 것에 전역되는 것(다크모드등등) 절대 안돼! */

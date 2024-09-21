@@ -1,6 +1,5 @@
-export interface Project {
-  title: string;
-  date: string;
-  descript: string;
+export type Project = {
   path: string;
-}
+  title: string;
+  description: string;
+};

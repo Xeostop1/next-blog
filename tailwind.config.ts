@@ -8,7 +8,7 @@ module.exports = {
   theme: { 
       extend: {
         colors: {
-          primary: '#FF6600', //주황색 테마
+          primary: '#F5F5F5', //주황색 테마
                 },
         fontFamily: {
           sans: ['Noto Sans', 'sans-serif'],

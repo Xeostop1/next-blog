@@ -8,24 +8,25 @@ export async function POST(req: NextRequest) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.EMAIL_USER, // Gmail 주소
-      pass: process.env.EMAIL_PASS, // 앱 비밀번호
+      user: process.env.EMAIL_USER, 
+      pass: process.env.EMAIL_PASS, //.env.local 사용 
     },
   });
 
   const mailOptions = {
-    from: process.env.EMAIL_USER, // 발신자 이메일
-    to: 'recipient@example.com', // 수신자 이메일 주소로 변경하세요
-    replyTo: email, // 사용자의 이메일을 답장 주소로 설정
-    subject: `문의사항이 도착했습니다: ${name}`,
+    from: process.env.EMAIL_USER,       // 발신자 이메일
+    to: '11requiem27@gmail.com',                      
+    replyTo: email,               // 사용자의 이메일을 답장 주소로 설정
+    subject:  `홈페이지 문의사항 ${name}`,
     text: `이름: ${name}\n이메일: ${email}\n\n메시지:\n${message}`,
   };
+  
 
   try {
     await transporter.sendMail(mailOptions);
     return NextResponse.json({ message: '이메일이 성공적으로 전송되었습니다.' }, { status: 200 });
   } catch (error) {
     console.error('이메일 전송 오류:', error);
-    return NextResponse.json({ message: '이메일 전송에 실패했습니다.', error: error.message }, { status: 500 });
+    return NextResponse.json({ message: '이메일 전송에 실패했습니다.', error: error }, { status: 500 });
   }
 }
