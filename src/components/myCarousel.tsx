@@ -10,12 +10,12 @@ import Link from 'next/link';
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 1,
+    items: 5,
     partialVisibilityGutter: 100,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 1,
+    items: 3,
     partialVisibilityGutter: 50,
   },
   mobile: {
@@ -26,11 +26,11 @@ const responsive = {
 };
 
 // 캐러셀 설정 컴포넌트
-type CarouselSetup = {
+type CarouselSetupProps = {
   children: React.ReactNode;
 };
 
-const CarouselSetup = ({ children }: CarouselSetup) => {
+const CarouselSetup = ({ children }: CarouselSetupProps) => {
   return (
     <Carousel 
       responsive={responsive}
@@ -52,9 +52,9 @@ type ProjectItemProps = {
 
 const ProjectItem = ({ project }: ProjectItemProps) => {
   return (
-    <div className="text-white no-underline p-2">
+    <div className="text-black p-2">
       <Link href={`/projects/${project.path}`}>
-        <div className="bg-white bg-opacity-98 text-black rounded-lg p-6 text-center shadow-md backdrop-blur-lg hover:bg-opacity-20 hover:text-white transition duration-300 ease-in-out">
+        <div className="bg-white shadow-md rounded-lg p-6 text-center hover:bg-opacity-80 hover:text-black transition duration-300 ease-in-out">
           {project.path ? (             
             <Image
               src={`/images/${project.path}.jpg`}
@@ -64,13 +64,13 @@ const ProjectItem = ({ project }: ProjectItemProps) => {
               className="rounded-lg w-full h-auto"
             />
           ) : (
-            <div className="h-64 w-full flex items-center justify-center bg-gray-700 rounded-lg">
-              <span className="text-white">이미지 없음</span>
+            <div className="h-64 w-full flex items-center justify-center bg-gray-300 rounded-lg">
+              <span className="text-gray-500">이미지 없음</span>
             </div>
           )}
-          <h2 className="mt-4 text-xl">{project.title}</h2>
-          <p><strong>Date:</strong> {project.date}</p>
-          <p>{project.descript}</p>
+          <h2 className="mt-4 text-xl font-semibold">{project.title}</h2>
+          <p className="text-gray-600"><strong>날짜:</strong> {project.date}</p>
+          <p className="text-gray-600">{project.descript}</p>
         </div>
       </Link>
     </div>

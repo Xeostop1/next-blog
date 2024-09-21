@@ -5,8 +5,15 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
     "./src/app/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    extend: {},
+  theme: { 
+      extend: {
+        colors: {
+          primary: '#FF6600', //주황색 테마
+                },
+        fontFamily: {
+          sans: ['Noto Sans', 'sans-serif'],
+                },
+    },
   },
   plugins: [],
 }
