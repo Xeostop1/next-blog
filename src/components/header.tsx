@@ -1,14 +1,24 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-gray-800">My Store</h1>
-        <nav className="flex space-x-6">
-          <Link href="/" className="text-gray-600 hover:text-black">Home</Link>
-          <Link href="/products" className="text-gray-600 hover:text-black">Products</Link>
-          <Link href="/contact" className="text-gray-600 hover:text-black">Contact</Link>
+    <header className="bg-white shadow-md">
+      <div className="container mx-auto px-8 py-8 mt-1">
+        <nav className="flex items-center justify-between">
+          <Link href="/" className="text-3xl font-bold">
+            Hello welcome
+          </Link>
+          <ul className="flex space-x-4 text-xl">
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/products">Products</Link>
+            </li>
+            <li>
+              <Link href="/contact">Contact</Link>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>

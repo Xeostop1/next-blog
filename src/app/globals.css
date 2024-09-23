@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0; 
-  --background-start-rgb: 245, 245, 245; 
+  --foreground-rgb: 0, 0, 0;
+  /* --background-start-rgb: 245, 245, 245; */
+  --background-start-rgb: 255, 255, 255;
 }
 
 body {
-  background: rgb(var(--background-start-rgb)); 
-  color: rgb(var(--foreground-rgb)); 
+  background: rgb(var(--background-start-rgb));
+  color: rgb(var(--foreground-rgb));
   @apply text-black;
 }
 
@@ -43,7 +44,8 @@ h3 {
     @apply scale-110;
   }
 
-  .carousel-item.prev, .carousel-item.next {
+  .carousel-item.prev,
+  .carousel-item.next {
     @apply opacity-50;
   }
 

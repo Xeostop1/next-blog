@@ -1,20 +1,18 @@
-import { getProjects } from '../service/projects';
-import { Project } from '../types/project';
-import dynamic from 'next/dynamic';
-import ProductGrid from '../components/projextGrid';  
-
-// 동적 로딩된 슬라이더 컴포넌트
-const MyCarousel = dynamic(() => import('../components/myCarousel'), { ssr: false });
+import { getProjects } from "../service/projects";
+import MainCarousel from "../components/MainCarousel";
+import ProductGrid from "../components/projextGrid";
+import Banner from "../components/banner";
+// import SpecialBanner from "../components/specialBanner";
 
 export default async function Home() {
-  const projects: Project[] = await getProjects();
+  const projects = await getProjects();
 
   return (
-    <>
-      <section className="w-full max-w-6xl mx-auto my-8">
-        <MyCarousel projects={projects} />  
-      </section>
-      <ProductGrid projects={projects} /> 
-    </>
+    <div className="container mx-auto px-4 py-8">
+      <MainCarousel projects={projects.slice(0, 3)} />
+      <Banner imgSrc="/images/banner1.jpg" width="95%" height="150px" title="광고주세요" />
+      <ProductGrid projects={projects} />
+      {/* <SpecialBanner projects={projects.slice(3, 9)} /> */}
+    </div>
   );
 }

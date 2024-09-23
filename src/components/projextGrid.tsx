@@ -1,22 +1,36 @@
-'use client';
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Project } from '../types/project';
+import Image from "next/image";
+import { Project } from "../types/project";
 
-const ProductGrid = ({ projects }: {projects: Project[];}) => {
+export default function ProductGrid({ projects }: { projects: Project[] }) {
   return (
-    <section className="container mx-auto product-grid">
-      {projects.map((project) => (
-        <div key={project.path} className="product-item">
-          <Image src={`/images/${project.path}.jpg`} alt={project.title} width={300} height={200} className="w-full h-auto rounded-md" />
-          <h2>{project.title}</h2>
-          <p>{project.description}</p>
-          <Link href={`/projects/${project.path}`} className="text-primary mt-4 block">View More</Link>
-        </div>
-      ))}
-    </section>
-  );
-};
+    <div className="px-5 sm:px-5 lg:px-5">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-0">
+          {projects.map((project) => (
+            <div key={project.path} className="bg-white  overflow-hidden flex flex-col">
+              {/* 이미지 크기를 줄이기 위해 고정 너비와 높이를 설정 */}
+              <div className="relative w-[280px] h-[280px] mb-4">
+                <Image
+                  src={`/images/${project.path}.jpg`}
+                  alt={project.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
+                />
+              </div>
 
-export default ProductGrid;
+              <div className="px-4 pb-4">
+                <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                <p className="text-sm text-gray-600 mb-2">
+                  {project.descript && project.descript.length > 100
+                    ? `${project.descript.substring(0, 100)}...`
+                    : project.descript || ""}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
